@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<head>
+	<link rel="shortcut icon" href="{% static 'Chatbot/images/chatbot_1x.png' %}"/>
+    <title>
+        Gladys
+    </title>
+
+    <link rel="stylesheet" href="{% static 'Chatbot/style.css' %}">
+</head>
+
+<body>
+<div class="menu">
+            <div class="back"><i class="fa fa-chevron-left"></i> <img src="{% static 'Chatbot/images/chatbot_1x.png' %}" draggable="false"/></div>
+            <div class="name">Gladys</div>
+            <div class="last">18:09</div>
+</div>
+    <ol class="chat">
+    <li class="other">
+        <div class="avatar"><img src="{% static 'Chatbot/images/chatbot_1x.png' %}" draggable="false"/></div>
+      <div class="msg">
+        <p>Hello!</p>
+        <p>What would you like to order today?</p>
+        <time>20:17</time>
+      </div>
+    </li>
+    <li class="self">
+        <div class="avatar"><img src="https://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+      <div class="msg">
+        <p>Let me think...</p>
+        <time>20:18</time>
+      </div>
+    </li>
+
+    </ol>
+    <input class="textarea" type="text" placeholder="Type here!"/>
+</body>
