@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 from Chatbot import urls as chatbot_urls
+from about import urls as about_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^chat/', include(chatbot_urls)),
+    url(r'^', include(about_urls)),
 ]
