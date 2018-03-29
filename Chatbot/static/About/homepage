@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gladys</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+
+     /* Remove the jumbotron's default bottom margin */
+      .jumbotron {
+       margin-bottom: 0;
+       padding: 20em;
+       background-image: url('hello.png');
+       background-repeat: no-repeat;
+       /*background-position: 20% 20%;*/
+       background-size: cover;
+
+     }
+     .bot-head {
+       text-align: left;
+     }
+     .description {
+       background-color: black;
+       text-align: center;
+       padding: 10em;
+       color: white;
+     }
+
+    .get-the-party-started {
+      background-image: url('hi.png');
+      text-align: right;
+      background-size:  auto;
+      padding: 10em;
+      background-repeat: no-repeat;
+    }
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="bot-head">
+    <br/> 
+    <h1>Gladys</h1>
+    <p>An online food ordering chatbot</p>
+  </div>
+</div>
+
+<div class = "description">
+  <h1>Description</h1>
+  <br>
+  <p> Gladys is a blah blah blahhhhhhh </p>
+</div>
+<br/><br/>
+
+<div class = "get-the-party-started">
+  <h1> Let's get started! </h1><br/>
+  <h2> What's your name? </h2>
+  <br/><br/><br/><br/>
+  <form class = "your-name">
+    <input type="text" class="form-control" size="50" placeholder="First Name">
+    <button type="button" class="btn btn-primary btn-block active">Submit!</button>
+  </form>
+</div>
+<footer class="container-fluid text-center">
+  <p>Gladys Inc., 2018</p>
+
+</footer>
+
+</body>
+</html>
