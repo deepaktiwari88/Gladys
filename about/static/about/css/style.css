@@ -1,0 +1,48 @@
+.jumbotron {
+       margin-bottom: 0;
+       padding: 20em;
+       background-image: url('/static/about/hello.png') ;
+       background-repeat: no-repeat;
+       background-position: 20% 20%;
+       background-size: cover;
+
+     }
+     .bot-head {
+       text-align: left;
+     }
+     .description {
+       background-color: black;
+       text-align: center;
+       padding: 10em;
+       color: white;
+     }
+
+    .get-the-party-started {
+      background-image: url('/static/about/hi.png');
+      text-align: right;
+      background-size:  auto;
+      padding: 10em;
+      background-repeat: no-repeat;
+    }
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+    h1 {
+        font-family: Verdana;
+        font-size: 50px;
+    }
+
+    .myform {
+
+        background-color: antiquewhite;
+    }
+
+     .myform h2 {
+         font-size: 60px;
+         font-family: Georgia;
+         font-weight: 300;
+    }
+
