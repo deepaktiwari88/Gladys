@@ -1,24 +1,62 @@
+{% load staticfiles %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title> About Us </title>
+  <title>Gladys</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'about/css/style.css' %}">
+  <style type="text/css">
+    .form-control-lg {
+    }
+  </style>
 </head>
-<body>
 
-    <div class="jumbotron">
-        <div class="container">
-            <h1> Gladys </h1>
-        </div>
-    </div>
+<body onload="pageScroll()">
 
+<div class="container-fluid" onmousemove="stopScroll()">
+<div id="top" class="jumbotron">
+  <div class="bot-head">
+    <br/> 
+    <h1>Gladys</h1>
+    <br>
+    <p>An online food ordering chatbot</p>
+  </div>
+</div>
 
+<div id="bottom" class="description" >
+  <h1>Description</h1>
+  <br>
+  <p> Gladys is a blah blah blahhhhhhh </p>
+</div>
+<br/><br/>
 
+<div class = "get-the-party-started">
+  <h1> Let's get started! </h1><br/>
+</div>
+
+  <div class="container text-center myform">
+  <h2> What's your name? </h2>
+    <br>
+
+  <form class = "form-group">
+    <input type="text" class="form-control form-control-lg" placeholder="Enter Your Name">
+    <hr>
+    <button type="button" class="btn btn-primary btn-lg">Submit!</button>
+  </form>
+</div>
+</div>
+<footer class="container-fluid text-center">
+  <p>Gladys Inc., 2018</p>
+
+</footer>
+
+<script src="/static/about/js/main.js"></script>
 
 </body>
 </html>
