@@ -17,14 +17,24 @@
        color: white;
      }
 
-    .get-the-party-started {
-      background-image: url('/static/about/hi.png');
-      text-align: right;
-      background-size:  auto;
-      padding: 10em;
-      background-repeat: no-repeat;
-    }
-    /* Add a gray background color and some padding to the footer */
+     .description h1{
+         color: #ecd1a6
+     }
+
+     .description p{
+         font-size: 22px;
+     }
+
+     .get-started {
+         margin-top: 100px;
+         text-align: center;
+     }
+
+     .get-started h1{
+         font-size: 80px;
+         font-family: Trajan;
+     }
+
     footer {
       background-color: #f2f2f2;
       padding: 25px;
