@@ -17,11 +17,9 @@ class Address(models.Model):
     city = models.CharField(max_length=40)
 
     def isRestaurant(self):
-
         if self.house_no is None:
             return True
     def isUser(self):
-
         if self.shop_no is None:
             return True
 
