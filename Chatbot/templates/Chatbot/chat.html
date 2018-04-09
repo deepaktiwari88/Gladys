@@ -2,49 +2,64 @@
 {% load static %}
 
 <!DOCTYPE html>
+<html>
 <head>
-	<link rel="shortcut icon" href="{% static 'Chatbot/images/chatbot_1x.png' %}"/>
-    <title>
-        Gladys
-    </title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{%  static 'Chatbot/custom.css' %}">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
-    <link rel="stylesheet" href="{% static 'Chatbot/style.css' %}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-
 <body>
-<div class="menu">
-    <div class="back"><a style="color: white" href="{% url 'about:index' %}" ><i class="fa fa-chevron-left"></i></a> <img src="{% static 'Chatbot/images/chatbot_1x.png' %}" draggable="false"/></div>
-            <div class="name">Gladys</div>
-            <div class="last">18:09</div>
-</div>
-<div class="interface">
-    <ol class="chat">
-    <li class="other">
-        <div class="avatar"><img src="{% static 'Chatbot/images/chatbot_1x.png' %}" draggable="false"/></div>
-      <div class="msg">
-        <p>Hello {{ name }}!</p>
-        <p>What would you like to order today?</p>
-        <time>20:17</time>
-      </div>
-    </li>
-    <li class="self">
-        <div class="avatar"><img src="https://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
-      <div class="msg">
-        <p>Let me think...</p>
-        <time>20:18</time>
-      </div>
-    </li>
+	<div class="container main-section">
+		<div class="row">
 
-    </ol>
-</div>
+			<div class="col-md-12 col-sm-12 col-xs-12 right-sidebar">
+				<div class="row">
+					<div class="col-md-12 right-header">
+						<div class="right-header-img">
+							<img src="{% static 'Chatbot/images/chatbot_1x.png' %}">
+						</div>
+						<div class="right-header-detail">
+							<p>Gladys</p>
+                            <span>Online Now</span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 right-header-contentChat">
+						<ul>
+							<li>
+								<div class="rightside-left-chat">
+									<span><i class="fa fa-circle" aria-hidden="true"></i> joi chak <small>10:00 AM,Today</small> </span><br><br>
+									<p>Hi {{ name }}. What's Up ?</p>
+								</div>
+							</li>
+							<li>
+								<div class="rightside-right-chat">
+									<span> <small>10:00 AM,Today</small>  nik minaj <i class="fa fa-circle" aria-hidden="true"></i></span><br><br>
+									<p>Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.
+									Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 right-chat-textbox">
+						<input type="text"><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <form id="send" method="post" action="">
-
-        {% csrf_token %}
-        <input class="textarea" id="send" name="send-request" type="text" placeholder="Type here!"/>
-        <input type="submit" value="Send">
-    </form>
-
-
+	<script type="text/javascript">
+		$(document).ready(function(){
+	    	var height = $(window).height();
+	    	$('.left-chat').css('height', (height - 92) + 'px');
+	    	$('.right-header-contentChat').css('height', (height - 163) + 'px');
+	    });
+	</script>
 </body>
+</html>
