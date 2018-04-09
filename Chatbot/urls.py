@@ -5,5 +5,5 @@ app_name = "chatbot"
 
 urlpatterns = [
 
-    url(r'^$', views.chat, name="Chatbot"),
+    url(r'^bot/$', views.chat, name="Chatbot"),
 ]
