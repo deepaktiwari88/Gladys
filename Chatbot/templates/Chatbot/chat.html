@@ -38,6 +38,13 @@
 
     </ol>
 </div>
-    <input class="textarea" type="text" placeholder="Type here!"/>
+
+    <form id="send" method="post" action="">
+
+        {% csrf_token %}
+        <input class="textarea" id="send" name="send-request" type="text" placeholder="Type here!"/>
+        <input type="submit" value="Send">
+    </form>
+
 
 </body>
