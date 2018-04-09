@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if all_restaurants %}
+    <ul>
+        {% for restaurant in all_restaurants %}       <!-- for writing django code -->
+        <li>Name: {{restaurant.name}}  Address: {{restaurant.address}} <br> Image: </li>        <!-- {{albumid}} is for accessing python variables-->
+        {% endfor %}
+    </ul>
+{% else %}
+    <h3>You don't have any restaurants!</h3>
+{% endif %}
+</body>
+</html>

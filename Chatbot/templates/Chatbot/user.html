@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if all_users %}
+    <ul>
+        {% for user in all_users %}       <!-- for writing django code -->
+        <li>Name: {{user.userName}}  Address: {{user.address}}</li>        <!-- {{albumid}} is for accessing python variables-->
+        {% endfor %}
+    </ul>
+{% else %}
+    <h3>You don't have any Users!</h3>
+{% endif %}
+</body>
+</html>

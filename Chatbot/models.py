@@ -23,6 +23,9 @@ class Address(models.Model):
         if self.shop_no is None:
             return True
 
+    def __str__(self):
+        return self.city + ' Sector: ' + self.sector
+
 
 class Menu(models.Model):
 
@@ -41,7 +44,7 @@ class Restaurant(models.Model):          # generates primary key on its own
     rating = models.IntegerField()      # rating, name are all columns in database
     name = models.CharField(max_length=100)
     address = models.ForeignKey(Address, on_delete=models.CASCADE)
-    image = models.ImageField()
+    image = models.ImageField(blank=True)
     menu = models.ForeignKey(Menu, on_delete=models.CASCADE)
 
 
