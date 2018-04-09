@@ -8,8 +8,8 @@ from django.core.validators import RegexValidator
 
 class Address(models.Model):
 
-    house_no = models.IntegerField(null=True)         # will be null for restaurant
-    shop_no = models.IntegerField(null=True)           # will be null for user
+    house_no = models.IntegerField(null=True, blank=True)         # will be null for restaurant
+    shop_no = models.IntegerField(null=True, blank=True)           # will be null for user
     sector = models.CharField(max_length=5)
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
                                  message="Up to 15 digits allowed.")
@@ -31,6 +31,9 @@ class Menu(models.Model):
     description = models.TextField(max_length=1000, null=True)
     price = models.IntegerField()
 
+# string representation of the object
+    def __str__(self):
+        return self.dishName + ' - ' + str(self.price)
 
 class Restaurant(models.Model):          # generates primary key on its own
 
@@ -60,6 +63,9 @@ class User(models.Model):
     userName = models.CharField(max_length=30)      # should i make first name last name separate
     address = models.ForeignKey(Address, on_delete=models.CASCADE)      # address+contact of the user
 
+# string representation of the object
+    def __str__(self):
+        return self.userName + ' - ' + str(self.address)
 
 class Order(models.Model):
 
@@ -73,6 +79,9 @@ class Order(models.Model):
         self.finalPrice = Menu.price - discount*Menu.price
         return self.finalPrice
 
+# string representation of the object
+    def __str__(self):
+        return self.dish + ' - ' + str(self.finalPrice)
 
 class DeliveryService(models.Model):
 
