@@ -4,7 +4,9 @@ from .models import Restaurant
 from django.shortcuts import render
 
 def chat(request):
-    return render(request, 'Chatbot/chat.html', {})
+    name = request.session.get('Name')
+    context = {'name':name}
+    return render(request, 'Chatbot/chat.html', context)
 
 def servequery(request):
     query = request.POST.get('send-request', None)
