@@ -7,8 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="{%  static 'Chatbot/custom.css' %}">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{% static 'Chatbot/main.js' %}"></script>
 </head>
 <body>
 	<div class="container main-section">
@@ -29,28 +29,52 @@
 				<div class="row">
 					<div class="col-md-12 right-header-contentChat">
 						<ul>
-							<li>
-								<div class="rightside-left-chat">
-									<span><i class="fa fa-circle" aria-hidden="true"></i> joi chak <small>10:00 AM,Today</small> </span><br><br>
-									<p>Hi {{ name }}. What's Up ?</p>
+                                <li>
+                                    <div class="rightside-left-chat">
+                                        <span><i class="fa fa-circle" aria-hidden="true"></i> Gladys </span><br><br>
+                                        <p> Hi {{ name }}. What do you want to see today ?</p>
+                                    </div>
+                                </li>
+
+                                {% if query %}
+                                <li>
+                                    <div class="rightside-right-chat">
+									<span> {{ name }}<i class="fa fa-circle" aria-hidden="true"></i></span><br><br>
+                                        {% csrf_token %}
+                                        <p> {{ query }} </p>
 								</div>
-							</li>
-							<li>
-								<div class="rightside-right-chat">
-									<span> <small>10:00 AM,Today</small>  nik minaj <i class="fa fa-circle" aria-hidden="true"></i></span><br><br>
-									<p>Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.
-									Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.</p>
-								</div>
-							</li>
+                                </li>
+                            {% endif %}
+
+                            {% if results %}
+                            <li>
+                                {% for restaurant in results %}
+                                <div class="rightside-left-chat">
+                                    <span> Gladys <i class="fa fa-circle" aria-hidden="true"></i></span><br><br>
+                                    {% csrf_token %}
+                                    <p> Name : {{restaurant.name}} <br> Rating : {{restaurant.rating}} <br>
+                                        Address : {{ restaurant.address.shop_no }} , Sector {{ restaurant.address.sector }},
+                                        {{ restaurant.address.city }} </p>
+                                    {% endfor %}
+                                </div>
+
+                            </li>
+                            {% endif %}
+
 						</ul>
+
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-12 right-chat-textbox">
-						<input type="text"><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                        <form name="myForm" method="post" onsubmit="return validateForm()">
+                            {%  csrf_token %}
+                            <input type="text" name="message">
+                            <button type="submit" class="btn btn-primary">Send!</button>
+                        </form>
 					</div>
 				</div>
-			</div>
+            </div>
 		</div>
 	</div>
 
