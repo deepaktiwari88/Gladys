@@ -1,20 +1,21 @@
 from django.shortcuts import render
-from .models import Restaurant
+from .models import Restaurant, Address
+from django.template import RequestContext
 
-from django.shortcuts import render
+from django.shortcuts import render,render_to_response
 
 def chat(request):
-    name = request.session.get('Name')
-    context = {'name':name}
-    return render(request, 'Chatbot/chat.html', context)
 
-def servequery(request):
-    query = request.POST.get('send-request', None)
-    context = {}
-
-    if query=='restaurant' and request.method == 'POST':
+    query = request.POST.get('message')
+    if query=='Restaurant':
         results = Restaurant.objects.all()
-        context.update({'results':results})
+        name = request.session.get('Name')
 
-    return render(request, 'Chatbot/chat.html', context)
+        return render(request,'Chatbot/chat.html', {'results': results, 'query':query, 'name':name})
+    else:
+        name = request.session.get('Name')
+        context = {'name':name}
+        return render(request, 'Chatbot/chat.html', context)
+
+
 
