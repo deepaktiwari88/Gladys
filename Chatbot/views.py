@@ -1,8 +1,5 @@
+from .models import Restaurant
 from django.shortcuts import render
-from .models import Restaurant, Address
-from django.template import RequestContext
-
-from django.shortcuts import render,render_to_response
 
 def chat(request):
 
