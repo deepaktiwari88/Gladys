@@ -125,9 +125,9 @@
   background-color: #3A3A3A;
 }
 .right-chat-textbox input{
-  width:88%;
+  width:95%;
   height:40px;
-  color:#9FA5AF;
+  color: black;
   border-radius:5px;
   padding: 0px 10px;
   border:1px solid #c1c1c1;
