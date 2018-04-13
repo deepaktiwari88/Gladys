@@ -93,3 +93,9 @@ class DeliveryService(models.Model):
                                  message="Up to 15 digits allowed.")
     phoneNumber = models.CharField(validators=[phone_regex], max_length=17, blank=True)  # validators should be a list
     userDetails = models.ForeignKey(User, models.CASCADE)
+
+class Chat(models.Model):
+
+    username = models.CharField(max_length=25)
+    message = models.TextField(max_length=200, null=True, blank=True)
+    isuser = models.BooleanField()
