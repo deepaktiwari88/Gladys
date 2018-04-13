@@ -1,0 +1,20 @@
+{% for obj in chat %}
+        {%if obj.isuser == False %}
+             <li>
+                 <div class="rightside-left-chat">
+                     <span><i class="fa fa-circle" aria-hidden="true"></i> {{ obj.username|safe }} </span><br><br>
+                            <p> {{ obj.message|safe }} </p>
+                 </div>
+             </li>
+        {% endif %}
+        {% if obj.isuser == True %}
+            <li>
+                 <div class="rightside-right-chat">
+                     <span><i class="fa fa-circle" aria-hidden="true"></i> {{ obj.username|safe }} </span><br><br>
+                            <p> {{ obj.message|safe }} </p>
+                 </div>
+             </li>
+
+        {% endif %}
+
+{% endfor %}
