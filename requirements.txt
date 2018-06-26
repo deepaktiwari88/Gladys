@@ -1,0 +1,4 @@
+Django==2.0.5
+mysqlclient
+rasa_core
+rasa_nlu
