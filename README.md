@@ -73,5 +73,5 @@ If you have any problems, go through this [video](https://www.youtube.com/watch?
 
 9. Add a remote to your forked repository. This remote will be needed to push your changes to your repo.
     ```
-    git remote add myfork https://github.com/<username>/website.git
+    git remote add myfork https://github.com/<username>/Gladys.git
     ```
