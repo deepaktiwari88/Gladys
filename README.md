@@ -3,7 +3,7 @@
 <p align="center">
   <img src="https://github.com/deepaktiwari88/Gladys/blob/master/about/static/about/hello.png" width="350"/>
 </p>
-Gladys is an online food ordering chatbot. It is designed to help restaurant and food providers reduce labour costs, reduce human errors and to improve overall customer service experience. The chatbot helps customers in choosing from various cuisines and restaurants and ordering their dishes from the menu of a picked restaurant, tracking the order and delivery. 
+Gladys is a chatbot built using Django. It is used to suggest the user various restaurants based on their cuisine choice or location. 
 
 ## Development Workflow
 
